@@ -3,9 +3,9 @@ Markdown is a markup language.<br>
 The notes are based on [markdown tutorial](https://www.markdowntutorial.com/).
 
 ## Italics and Bold
-italic (surround words with _ or *): _italic_<br>
-bold (surround words with __ or **): **bold**<br>
-bold and italic (surround words with **_ or *__): **_bold and italic_**<br>
+italic ```_italic_<br>```: _italic_<br>
+bold ```**bold**<br>```: **bold**<br>
+bold and italic ```**_bold and italic_**```: **_bold and italic_**<br>
 
 ## Headers
 Preface the phrase with #. The number of # is the size of the header.

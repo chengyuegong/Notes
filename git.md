@@ -1,6 +1,6 @@
 # Git
 Git is a version-control system for tracking changes.  
-The notes are based on [git tutorial](https://git-scm.com/docs/gittutorial) and [git cheet sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)  
+The notes are based on [git tutorial](https://git-scm.com/docs/gittutorial) and [git cheet sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf).  
 Using _git help_ to see the git document.
 
 ## Initialization

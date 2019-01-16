@@ -50,7 +50,7 @@ $ git reset [commit]
 ## Merging branches
 1. Create a branch
 ```
-$ git branch mybranch
+$ git branch [branch-name]
 ```
 * See existing branches
 ```
@@ -58,18 +58,18 @@ $ git branch
 ```
 2. Switch to the new branch, edit files and commit
 ```
-$ git checkout mybranch
+$ git checkout [branch-name]
 (edit files)
 $ git commit -a
 ```
 3. Switch back to the master branch, and merge changes made in mybranch into master (If changes conflict, using _git diff_ to see difference and resolve)
 ```
 $ git checkout master
-$ git merge mybranch
+$ git merge [branch]
 ```
 4. Delete the branch (-D for force delete)
 ```
-$ git branch -d mybranch
+$ git branch -d [branch-name]
 ```
 
 ## Saving fragements

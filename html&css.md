@@ -85,10 +85,10 @@ Check [Tag Reference](https://www.w3schools.com/tags/) for all tags
 1. **GET** transfers the variables in the URL
 2. **POST** transfers the variables as an HTTP header
 
-When to use GET vs. POST
-- Need to bookmark the destination page: GET
+**When to use GET vs. POST**
+- Bookmark the destination page: GET
 - Transmit sensitive information: POST
-- Transmit large dataL: POST
+- Transmit large data: POST
 - Modify something in a database: POST
 
 ### Input Types

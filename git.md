@@ -3,6 +3,13 @@ Git is a version-control system for tracking changes.
 The notes are based on [git tutorial](https://git-scm.com/docs/gittutorial) and [git cheet sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf).  
 Using _git help_ to see the git document.
 
+Contents
+* [Initialization](#initialization)
+* [Making changes](#making-changes)
+* [Merging branches](#merging-branches)
+* [Saving fragments](#saving-fragments)
+* [Synchronizing changes](#synchronizing-changes)
+
 ## Initialization
 1. Create a directory
 2. Go into the directory
@@ -72,7 +79,7 @@ $ git merge [branch]
 $ git branch -d [branch-name]
 ```
 
-## Saving fragements
+## Saving fragments
 1. Store all modified trakced files
 ```
 $ git stash

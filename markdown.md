@@ -2,7 +2,7 @@
 Markdown is a markup language.  
 The notes are based on [markdown tutorial](https://www.markdowntutorial.com/).
 
-Contents:
+**Contents**
 * [Italics and Bold](#italics-and-bold)
 * [Headers](#headers)
 * [Links](#links)

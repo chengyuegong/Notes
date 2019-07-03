@@ -1,6 +1,6 @@
 # Git
 Git is a version-control system for tracking changes.  
-The notes are based on [git tutorial](https://git-scm.com/docs/gittutorial) and [git cheet sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf).  
+The notes are based on [git tutorial](https://git-scm.com/docs/gittutorial), [git cheet sheet](https://education.github.com/git-cheat-sheet-education.pdf) and [Xuefeng Liao's Git Tutorial](https://www.liaoxuefeng.com/wiki/896043488029600).  
 Using _git help_ to see the git document.
 
 **Contents**
@@ -11,47 +11,81 @@ Using _git help_ to see the git document.
 * [Synchronizing changes](#synchronizing-changes)
 
 ## Initialization
-1. Create a directory
-2. Go into the directory
-3. Initialize the working directory
+* Create a new local repository with the specified name
 ```
-$ mkdir myproject
-$ cd myproject
+$ mkdir [project-name]
+$ cd [project-name]
 $ git init
+// or in one step
+$ git init [project-name]
+```
+* Download a project and its entire version history
+```
+$ git clone [url]
 ```
 
 ## Making changes
-1. Staging: Add the modified contents to the index
+1. Stage
+* Snapshot the file in preparation for versioning
 ```
 $ git add [file]
 ```
-* See difference
-```
-$ git diff
-```
-* See a brief summary
-```
-$ git status
-```
-* See history
-```
-$ git log
-```
-* Unstage the file
+* Unstage the file, but preserve its contents
 ```
 $ git reset [file]
 ```
-2. Commit: commit changes (-m indicates the commit message)
+* Discard changes that **not yet staged** in working directory
 ```
-$ git commit -m "[message]"
+$ git checkout -- [file]
 ```
-* Instead of running _git add_ beforehand, the following command will automatically commit all modified files in one step
+* Delete the file from the working directory and stage the deletion
+```
+$ git rm [file]
+```
+* Remove the file from version control but preserves the file locally
+```
+$ git rm --cached [file]
+```
+* Change the file name and prepare it for commit
+```
+$ git mv [file-original] [file-renamed]
+```
+
+* Show file differences **not yet staged**
+```
+$ git diff
+```
+* Show file differences **between staging and the last file version**
+```
+$ git diff --staged
+```
+* List all new or modified files to be commited
+```
+$ git status
+```
+* List version history for the current branch
+```
+$ git log
+// Single one line
+$ git log --all --decorate --oneline --graph
+```
+
+2. Commit
+* Record file snapshots permanently in version history
+```
+$ git commit -m "[descriptive-message]"
+```
+* Instead of running _git add_ beforehand, the following command will automatically commit all modified files in one step (not recommanded)
 ```
 $ git commit -a
 ```
-* Undo all commits after _commit_
+* Undo all commits after a specific commit, preserving changes locally
 ```
-$ git reset [commit]
+$ git reset [commit_id]
+```
+* Discard all history and changes back to the specified commit
+```
+$ git reset --hard [commit_id]
 ```
 
 ## Merging branches
@@ -98,15 +132,19 @@ $ git stash drop
 ```
 
 ## Synchronizing changes
-* Download a project from a remote repository
+* Add a git URL as an alias
 ```
-$ git clone [url]
+$ git remote add [alias] [url]
 ```
-* Download history and incorporates changes
+* Fetch down all the branches from that Git remote
+```
+$ git fetch [alias]
+```
+* Fetch and merge any commits from the tracking remote branch
 ```
 $ git pull
 ```
-* Upload local commits to a remote repository
+* Uploads all local branch commits to remote
 ```
-$ git push [branch]
+$ git push [alias] [branch]
 ```

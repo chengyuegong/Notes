@@ -7,7 +7,7 @@ Using _git help_ to see the git document.
 * [Initialization](#initialization)
 * [Making changes](#making-changes)
 * [Merging branches](#merging-branches)
-* [Rebase](#rebase)
+* [Rewriting history](#rewriting-history)
 * [Tag](#tag)
 * [Saving fragments](#saving-fragments)
 * [Synchronizing changes](#synchronizing-changes)
@@ -19,7 +19,7 @@ $ git init
 ```
 * Create a new local repository with the specified name
 ```
-$ git init [project-name]
+$ git init [project]
 ```
 * Retrieve an entire repository from a hosted location via URL
 ```
@@ -98,15 +98,15 @@ $ git branch
 ```
 * Create a new branch at the current commit
 ```
-$ git branch [branch-name]
+$ git branch [branch]
 ```
 * Switch to another branch and check it out into your working directory
 ```
-$ git checkout [branch-name]
+$ git checkout [branch]
 ```
 * Create a new branch and switch to it in one step
 ```
-$ git checkout -b [branch-name]
+$ git checkout -b [branch]
 ```
 * Merge the specified branch’s history into the current one
 ```
@@ -114,19 +114,42 @@ $ git merge [branch]
 ```
 * Delete the branch (-D for force delete)
 ```
-$ git branch -d [branch-name]
+$ git branch -d [branch]
 ```
-* Set up <branch-name>'s tracking information so <upstream> is considered <branchname>'s upstream branch. If no <branch-name> is specified, then it defaults to the current branch.
+* Set up branch's tracking information so upstream is considered branch's upstream branch  
 ```
-$ git branch -u <upstream> <branch-name>
+$ git branch -u [upstream] [branch]
 // or
-$ git branch --set-upstream-to=<upstream> <branch-name>
+$ git branch --set-upstream-to=[upstream] [branch]
 ```
 
 
-## Rebase
-[Git Rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
-
+## Rewriting history
+[Reference](https://www.atlassian.com/git/tutorials/rewriting-history)
+* Change the most recent commit message
+```
+$ git commit --amend -m "[descriptive-message]"
+```
+* Change committed files without changing the commit message
+```
+$ git commit --amend --no-edit
+```
+* Apply any commits of current branch ahead of specified branch
+```
+$ git rebase [branch]
+```
+* Rebase interactively with the opportunity to alter individual commits in the process
+```
+$ git rebase -i [branch]
+```
+* Display the reference logs for the local repository
+```
+$ git reflog
+```
+* Show the reference logs with relative date information
+```
+$ git reflog --relative-date
+```
 
 ## Tag
 * List all tags

@@ -7,6 +7,8 @@ Using _git help_ to see the git document.
 * [Initialization](#initialization)
 * [Making changes](#making-changes)
 * [Merging branches](#merging-branches)
+* [Rebase](#rebase)
+* [Tag](#tag)
 * [Saving fragments](#saving-fragments)
 * [Synchronizing changes](#synchronizing-changes)
 
@@ -23,6 +25,7 @@ $ git init [project-name]
 ```
 $ git clone [url]
 ```
+
 
 ## Making changes
 1. Stage
@@ -50,7 +53,6 @@ $ git rm --cached [file]
 ```
 $ git mv [file-original] [file-renamed]
 ```
-
 * Show file differences **not yet staged**
 ```
 $ git diff
@@ -81,55 +83,108 @@ $ git commit -a
 ```
 * Undo all commits after a specific commit, preserving changes locally
 ```
-$ git reset [commit_id]
+$ git reset [commit-id]
 ```
 * Discard all history and changes back to the specified commit
 ```
-$ git reset --hard [commit_id]
+$ git reset --hard [commit-id]
 ```
 
+
 ## Merging branches
-1. Create a branch
-```
-$ git branch [branch-name]
-```
-* See existing branches
+* List branches (a * will appear next to the currently active branch)
 ```
 $ git branch
 ```
-2. Switch to the new branch, edit files and commit
+* Create a new branch at the current commit
+```
+$ git branch [branch-name]
+```
+* Switch to another branch and check it out into your working directory
 ```
 $ git checkout [branch-name]
-(edit files)
-$ git commit -a
 ```
-3. Switch back to the master branch, and merge changes made in mybranch into master (If changes conflict, using _git diff_ to see difference and resolve)
+* Create a new branch and switch to it in one step
 ```
-$ git checkout master
+$ git checkout -b [branch-name]
+```
+* Merge the specified branch’s history into the current one
+```
 $ git merge [branch]
 ```
-4. Delete the branch (-D for force delete)
+* Delete the branch (-D for force delete)
 ```
 $ git branch -d [branch-name]
 ```
+* Set up <branch-name>'s tracking information so <upstream> is considered <branchname>'s upstream branch. If no <branch-name> is specified, then it defaults to the current branch.
+```
+$ git branch -u <upstream> <branch-name>
+// or
+$ git branch --set-upstream-to=<upstream> <branch-name>
+```
+
+
+## Rebase
+[Git Rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
+
+
+## Tag
+* List all tags
+```
+$ git tag
+```
+* Create a tag
+```
+$ git tag [tag]
+```
+* Create a tag on a specific commit
+```
+$ git tag [tag] [commit-id]
+```
+* Create a tag with a descriptive message
+```
+$ git tag -a [tag] -m "[descriptive-message]"
+```
+* Delete a tag
+```
+$ git tag -d [tag]
+```
+* Push a tag to the remote branch
+```
+$ git push [alias] [tag]
+```
+* push all tags to the remote branch
+```
+$ git push [alias] --tags
+```
+* Delete a tag from the remote branch
+```
+$ git push [alias] :refs/tags/[tag]
+```
+
 
 ## Saving fragments
-1. Store all modified trakced files
+* Save modified and staged changes
 ```
 $ git stash
 ```
-* See stashed fiels
+* List all stashed changesets
 ```
 $ git stash list
 ```
-2. Restore the most recently stashed files
+* Restore the most recently stashed files
 ```
-$ git stash pop
+$ git stash apply
 ```
-* Delete the most recently stashed changeset
+* Discard the most recently stashed changeset
 ```
 $ git stash drop
 ```
+* Restore and discard the most recently stashed changeset
+```
+$ git stash pop
+```
+
 
 ## Synchronizing changes
 * Add a git URL as an alias

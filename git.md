@@ -1,6 +1,6 @@
 # Git
 Git is a version-control system for tracking changes.  
-The notes are based on [git tutorial](https://git-scm.com/docs/gittutorial), [git cheet sheet](https://education.github.com/git-cheat-sheet-education.pdf) and [Xuefeng Liao's Git Tutorial](https://www.liaoxuefeng.com/wiki/896043488029600).  
+The notes are based on [git tutorial](https://git-scm.com/docs/gittutorial), [git cheet sheet](https://education.github.com/git-cheat-sheet-education.pdf), and [Xuefeng Liao's Git Tutorial](https://www.liaoxuefeng.com/wiki/896043488029600).  
 Using _git help_ to see the git document.
 
 **Contents**
@@ -11,15 +11,15 @@ Using _git help_ to see the git document.
 * [Synchronizing changes](#synchronizing-changes)
 
 ## Initialization
+* Initialize an existing directory as a Git repository
+```
+$ git init
+```
 * Create a new local repository with the specified name
 ```
-$ mkdir [project-name]
-$ cd [project-name]
-$ git init
-// or in one step
 $ git init [project-name]
 ```
-* Download a project and its entire version history
+* Retrieve an entire repository from a hosted location via URL
 ```
 $ git clone [url]
 ```

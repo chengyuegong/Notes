@@ -1,4 +1,3 @@
-
 # Start another activity
 This demo app shows how to start another activity via either an explicit intent or an implicit intents.
 
@@ -89,7 +88,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
 }
 ```
 
-5. Add the required  ```<activity>``` and up navigation in **AndroidManifest.xml**
+5. Add the required  `<activity>` and up navigation in **AndroidManifest.xml**
 ```xml
 <activity  
   android:name=".DisplayMessageActivity"  
